@@ -58,7 +58,7 @@ FieldType Field::get(int x, int y)
  }
 
 /**
- * Changes the location from EMPTY_HIDDEN to EMPTY_SHOWN for the 
+ * Changes the location from EMPTY_HIDDEN to EMPTY_SHOWN for the
  * location and any valid locations adjacent (immediately above,
  * below, left, or right as printed) to the provided (x,y) location
 **/

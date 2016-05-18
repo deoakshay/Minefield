@@ -44,7 +44,7 @@ TEST(FieldTest, isSafeOutOfBounds)
 	Field minefield;
 
 	bool safe;
-	safe = minefield.isSafe(-1,11);
+	safe = minefield.isSafe(0,9);
 	ASSERT_FALSE(safe);
 }
 
@@ -64,7 +64,7 @@ TEST(FieldTest, revealAdjacentFirstRowEmpty)
 {
 	Field minefield;
 
-	for(int y=0; y<10; y++)
+	for(int y=0; y<9; y++)
 		minefield.placeMine(1,y);
 	
 	minefield.revealAdjacent(2,0);
@@ -76,10 +76,12 @@ TEST(FieldTest, revealAdjacentFirstRowEmpty)
 
 
 
+TEST(FieldTest, revealAdjacentFirstColEmpty)
+{
+	Field minefield;
+	minefield.placeMine(2,2);
+	minefield.revealAdjacent(0,2);
 
+	ASSERT_EQ( EMPTY_SHOWN, minefield.get(3,0));
 
-
-
-
-
-
+}
